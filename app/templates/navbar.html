@@ -6,16 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+{%block content%}
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="">Galleria Art</a>
     </div>
-    <div class="navbar-right">
-        <div class="my-auto mx-3 signup d-inline">
+    <div class="collapse navbar-collapse" >
+      <ul class="nav navbar-nav d-inline" >
+          <li class="mx-3 d-block"><a href="">Home</a></li>
+          <li class="mx-3 d-block"><a href="">About</a></li>
+          <li class="mx-3 d-block"><a href="">Contacts</a></li>
+      </ul>
+    <div class="navbar navbar-nav navbar-right d-inline" style="display:flex">
+        <div class="my-auto mx-3 signup d-inline" style="padding:1rem">
             <a href="" class="btn btn-success ">Sign Up</a>
         </div>
-        <div class="my-auto mx-3 login d-inline">
+        <div class="my-auto mx-3 login d-inline" style="padding:1rem">
             <a href="" class="btn btn-primary">
                 Log In
             </a>
@@ -23,5 +30,6 @@
     </div>
   </div>
 </nav>
+{%endblock%}
 </body>
 </html>
