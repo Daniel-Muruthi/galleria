@@ -32,7 +32,7 @@ if os.path.isfile(dotenv_file):
 
 MODE=config("MODE", default="dev")
 # UPDATE secret key
-SECRET_KEY = config['SECRET_KEY']
+SECRET_KEY = 'django1234'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
