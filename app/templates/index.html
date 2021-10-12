@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-
+{% load bootstrap3 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
 {%block content%}
 <body>
     {% for image in images %}
-    <img src="{{image.image}}" alt="image">
+    <img src="{{image.image.url}}" alt="image">
     <p>{{image.location}}</p>
     {%endfor%}
     <p>jJSCQSJC</p>
