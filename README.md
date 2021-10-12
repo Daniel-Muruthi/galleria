@@ -27,7 +27,7 @@ Galleria Art django web application is a site that offers a hustle free way of p
 
 ## Known Bugs
 
-None observed so far
+Admin interface is not working in production only in development
 
 
 
