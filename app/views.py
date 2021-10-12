@@ -4,4 +4,5 @@ from .models import Image, Location, Category
 #My views
 
 def home(request):
-    return render(request, 'index.html')
+    images = Image.show_images()
+    return render(request, 'index.html', {"images":images})

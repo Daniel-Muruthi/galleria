@@ -14,6 +14,9 @@ class Location(models.Model):
 class Category(models.Model):
     category=models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.category
+
 class Image(models.Model):
     image = models.ImageField()
     image_name = models.CharField(max_length = 60)
@@ -38,4 +41,9 @@ class Image(models.Model):
 
     def filter_by_location(self,location):
         self.objects.filter(location=location)
+
+    @classmethod
+    def show_images(cls):
+        images = cls.objects.all()
+        return images
 
