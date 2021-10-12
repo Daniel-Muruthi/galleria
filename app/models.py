@@ -1,7 +1,8 @@
 from django.db import models
 import datetime as dt
-
+from django.urls import reverse
 from django.db.models.deletion import CASCADE
+from django.shortcuts import (get_object_or_404,render,HttpResponseRedirect)
 
 # Create your models here.
 
@@ -23,27 +24,31 @@ class Image(models.Model):
     description = models.TextField()
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     def save_image(self):
-        self.save()
+        return self.save()
 
     def delete_image(self):
-        self.delete()
+        return self.delete()
     
     def update_image(self, image_name):
-        self.objects.filter(image_name=image_name).update()
+        return self.objects.filter(image_name=image_name).update()
 
     def get_image_by_id(self, id):
-        self.objects.filter(id=id)
+        return self.objects.filter(id=id)
 
     def search_image(self,category):
-        self.objects.filter(category=category)
+        return self.objects.filter(category=category)
 
     def filter_by_location(self,location):
-        self.objects.filter(location=location)
+        return self.objects.filter(location=location)
 
     @classmethod
     def show_images(cls):
         images = cls.objects.all()
         return images
+
+    def after_delete():
+        return reverse('homepage')
 
