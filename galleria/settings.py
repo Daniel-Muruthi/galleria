@@ -40,9 +40,9 @@ SECRET_KEY = 'django1234'
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 cloudinary.config(
-    cloud_name=config('CLOUDINARY_CLOUD_NAME'),
-    api_key=config('CLOUDINARY_API_KEY'),
-    api_secret=config('CLOUDINARY_API_SECRET'),
+    cloud_name='muruthi',
+    api_key='594622678843644',
+    api_secret='Hjg1aB5KyqLxcKNI8r4Y-jSVy0U',
     secure=True
 )
 
