@@ -10,7 +10,7 @@ Galleria Art django web application is a site that offers a hustle free way of p
 
 # Log In To Admin To Add Images 
 Log into the admin panel
-Username: Muruthi
+Username: Muruthi, 
 Password: adino1995
 
 ## HomePage
