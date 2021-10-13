@@ -38,10 +38,8 @@ class Image(models.Model):
 
     def get_image_by_id(self, id):
         return self.objects.filter(id=id)
-    @classmethod
-    def search_image(cls,category):
-        search=cls.objects.filter(category__name__icontains=category)
-        return search
+
+
 
     def filter_by_location(self,location):
         return self.objects.filter(location=location)
@@ -51,6 +49,12 @@ class Image(models.Model):
         images = cls.objects.all()
         return images
 
+    @classmethod
+    def search_image(cls,category):
+        return cls.objects.filter(category__name__icontains=category)
+
     def after_delete():
         return reverse('homepage')
 
+    def __str__(self):
+        return self.image_name

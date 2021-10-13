@@ -3,14 +3,14 @@ from django.http import HttpResponse
 from django.views.generic import DeleteView
 from .models import Image, Location, Category
 from django.views.generic import DeleteView
-from django.shortcuts import get_object_or_404,render,HttpResponseRedirect
-from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404,render,HttpResponseRedirect, redirect
+
 #My views
 
 def search(request):
     images = Image.show_images()
-    if 'search' in request.GET and request.GET["search"]:
-        category = request.GET.get('search')
+    if 'searchcategory' in request.GET and request.GET["searchcategory"]:
+        category = request.GET.get('searchcategory')
         images=Image.search_image(category)
         return render(request, 'results.html', {"images":images})
     else:
