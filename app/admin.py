@@ -9,5 +9,5 @@ class ImageAdmin(admin.ModelAdmin):
 admin.site.register(Location)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(Category)
-admin.site.index_template='index.html'
+
 
