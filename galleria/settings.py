@@ -34,7 +34,7 @@ MODE=config("MODE", default="dev")
 # UPDATE secret key
 SECRET_KEY = 'django1234'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 if config('MODE')=="dev":
     DATABASES = {
