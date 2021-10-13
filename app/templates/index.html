@@ -11,19 +11,21 @@
 </head>
 {%block content%}
 <body>
-    <div class="container-fluid row">
-        <div class="col-sm-12 d-flex">
-            {% for image in images %}
-            <div class="col-sm-3 card" style="height:580px !important">
-                <img src="{{image.image.url}}" alt="image" height="330px">
-                <h2 class="text-center">{{image.image_name}}</h2>
-                <h3>{{image.description}}</h3>
-                <p>{{image.location}}</p>
-                <p>Categories: {{image.category}}</p>
-                <p>Created at: {{image.pub_date}}</p>
-                <div class="d-flex" style="justify-content: space-around;">
-                    <a href="" class="btn btn-success">Update</a>
-                    <a href="" class="btn btn-danger ">Delete</a>
+    {% for image in images %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="col-sm-3 card" style="height:580px !important">
+                    <img src="{{image.image.url}}" alt="image" height="330px">
+                    <h2 class="text-center text-primary">{{image.image_name}}</h2>
+                    <h3>{{image.description}}</h3>
+                    <p>{{image.location}}</p>
+                    <p>Categories: {{image.category}}</p>
+                    <p>Created at: {{image.pub_date}}</p>
+                    <div class="d-flex" style="justify-content: space-around;">
+                        <a href="" class="btn btn-success">Update</a>
+                        <a href="" class="btn btn-danger ">Delete</a>
+                    </div>
                 </div>
             </div>
         </div>
