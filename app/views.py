@@ -1,21 +1,18 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.views.generic import DeleteView
 from .models import Image, Location, Category
 from django.views.generic import DeleteView
 from django.shortcuts import get_object_or_404,render,HttpResponseRedirect
+from django.shortcuts import redirect
 #My views
 
 def search(request):
     images = Image.show_images()
     if 'search' in request.GET and request.GET["search"]:
         category = request.GET.get('search')
-        if category==None:
-            images = Image.show_images()
-            return render(request, 'index.html', {"images":images})
-        else:
-            images=Image.search_image(category)
-            return render(request, 'results.html', {"images":images})
+        images=Image.search_image(category)
+        return render(request, 'results.html', {"images":images})
     else:
         return render(request, 'index.html', {"images":images})
 
@@ -31,12 +28,18 @@ def home(request):
     # else:
     #     return render(request, 'index.html', {"images":images})
 
+def post_delete(request, id):
+    images = Image.show_images()
+    delimage= get_object_or_404(Image, pk=id).delete()
+
+    return render(request, 'index.html', {"images":images})
 
 
 
-# class DeleteImage(DeleteView):
-#     models=Image
-#     template_name='delete.html'
+class DeleteImage(DeleteView):
+    models=Image
+    template_name='delete.html'
+    success_url=reverse_lazy('homepage')
 
     
 

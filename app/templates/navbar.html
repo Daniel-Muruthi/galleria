@@ -12,7 +12,8 @@
       </ul>
     </div>
     <div class="d-inline mx-auto">
-      <form class="navbar-form" name="search" role="search" action="" method="get">
+      <form class="navbar-form" name="search" role="search" action="{% url 'searchresults'%}" method="post">
+        {% csrf_token %}
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search Category" name="category">
             <div class="input-group-btn">

@@ -1,5 +1,6 @@
 {%extends 'base.html'%}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +24,13 @@
                             <h3 class="text-center text-primary">{{image.image_name}}</h3>
                             <h4>{{image.description|truncatechars:70}}</h4>
                             <p>Location: {{image.location}}</p>
-                            <p>Categories: {{image.category.all|join:','}}</p>
+                            <p>Categories: {{image.category.all|join:', '}}</p>
                             <p>Created at: {{image.pub_date}}</p>
                             <div class="card-footer">
                                 <input class="form-control input-lg" type="text" value="{{image.image.url}}"
                                 id="{{image.id}}.url">
-                                <div class="d-flex my-1" style="justify-content: space-around;">
-                                    <a href="" class="btn btn-success">Update</a>
-                                    <a href="" class="btn btn-danger ">Delete</a>
+                                <div class="d-flex my-1" style="justify-content: center;">
+                                    <a href="/{{image.id}}/delete/" class="btn btn-danger ">Delete Image</a>
                                 </div>
                             </div>
                         </div>

@@ -20,7 +20,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('app.urls')),
+    path('', include('app.urls')),
+    # path('delete/', include('app.urls')),
     path('admin/password_reset/', auth_views.PasswordResetView.as_view(),name='admin_password_reset',),
     path('admin/password_reset/done/',auth_views.PasswordResetDoneView.as_view(),name='password_reset_done',),
     path('reset/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm',),

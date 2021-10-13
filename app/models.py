@@ -30,8 +30,8 @@ class Image(models.Model):
     def save_image(self):
         return self.save()
 
-    def delete_image(self):
-        return self.delete()
+    # def delete_image(self):
+    #     return self.delete()
     
     def update_image(self, image_name):
         return self.objects.filter(image_name=image_name).update()
@@ -40,8 +40,8 @@ class Image(models.Model):
         return self.objects.filter(id=id)
     @classmethod
     def search_image(cls,category):
-        categoriesfound=cls.objects.filter(category__name__icontains=category)
-        return categoriesfound
+        search=cls.objects.filter(category__name__icontains=category)
+        return search
 
     def filter_by_location(self,location):
         return self.objects.filter(location=location)
