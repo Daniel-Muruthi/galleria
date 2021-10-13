@@ -8,7 +8,7 @@
 
 Galleria Art django web application is a site that offers a hustle free way of posting pictures with the world 
 
-## Creating a Picture
+# Log In To Admin To Add Images 
 Log into the admin panel
 Username: Muruthi
 Password: adino1995
