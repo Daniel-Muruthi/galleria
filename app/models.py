@@ -2,7 +2,8 @@ from django.db import models
 import datetime as dt
 from django.urls import reverse
 from django.db.models.deletion import CASCADE
-from django.shortcuts import (get_object_or_404,render,HttpResponseRedirect)
+from django.shortcuts import get_object_or_404,render,HttpResponseRedirect
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -19,7 +20,7 @@ class Category(models.Model):
         return self.category
 
 class Image(models.Model):
-    image = models.ImageField()
+    image = CloudinaryField('image')
     image_name = models.CharField(max_length = 60)
     description = models.TextField()
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
